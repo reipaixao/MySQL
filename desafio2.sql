@@ -41,14 +41,16 @@ CREATE TABLE historico (
 usuario_id INT,
 musica_id INT,
 FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-FOREIGN KEY (musica_id) REFERENCES musica(musica_id)
+FOREIGN KEY (musica_id) REFERENCES musica(musica_id),
+PRIMARY KEY (usuario_id, artista_id)
 );
 
 CREATE TABLE seguidores (
 usuario_id INT,
 artista_id INT NOT NULL,
 FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
+FOREIGN KEY (artista_id) REFERENCES artista(artista_id),
+PRIMARY KEY (usuario_id, artista_id)
 );
 
 INSERT INTO plano (nome, preco)
